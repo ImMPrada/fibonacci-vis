@@ -8,31 +8,38 @@
 </head>
 
 <body>
-  <p>Count numbers: <output id="result"></output></p>
+  <p>Count numbers: <output id="resultFibo_recurrente"></output></p>
   <button onclick="startWorker()">Start Worker</button>
   <button onclick="stopWorker()">Stop Worker</button>
 
   <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
 
   <script>
-    var w;
+    var Fibo_1__worker;
 
+    //startWorker inicia un trabajador
     function startWorker() {
+      //Evaluamos que si el trabajador fue creado, si no fue creado es que el navegador no los soporta
       if (typeof (Worker) !== "undefined") {
-        if (typeof (w) == "undefined") {
-          w = new Worker("demo_workers.js");
+        //Evaluamos si el trabajador Fibo_1__worker ya existe, si no existe se crea
+        if (typeof (Fibo_1__worker) == "undefined") {
+          //Fibo_1__worker instanciado
+          Fibo_1__worker = new Worker("../logic/Fibo_recursive.js");
         }
-        w.onmessage = function (event) {
-          document.getElementById("result").innerHTML = event.data;
-        };
+        Fibo_1__worker.addEventListener('message',function(event){
+          document.getElementById("resultFibo_recurrente").innerHTML=event.data; 
+        },false);
+        Fibo_1__worker.postMessage(15);
+        Fibo_1__worker.postMessage(35);
+        Fibo_1__worker.postMessage(45);
       } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+        document.getElementById("resultFibo_recurrente").innerHTML = "Sorry, your browser does not support Web Workers...";
       }
     }
 
     function stopWorker() {
-      w.terminate();
-      w = undefined;
+      Fibo_1__worker.terminate();
+      Fibo_1__worker = undefined;
     }
   </script>
 
