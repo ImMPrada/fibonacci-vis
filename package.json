@@ -1,0 +1,23 @@
+{
+  "name": "fibonacci-vis",
+  "version": "1.0.0",
+  "description": "More info to come...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migueling2015/fibonacci-vis.git"
+  },
+  "author": "migueling2015, mapra99",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/migueling2015/fibonacci-vis/issues"
+  },
+  "homepage": "https://github.com/migueling2015/fibonacci-vis#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
