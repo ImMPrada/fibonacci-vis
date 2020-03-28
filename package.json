@@ -2,7 +2,7 @@
   "name": "fibonacci-vis",
   "version": "1.0.0",
   "description": "More info to come...",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
