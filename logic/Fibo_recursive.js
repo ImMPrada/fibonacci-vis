@@ -10,5 +10,7 @@ function Fibo(n){
 }
 
 self.addEventListener('message', function(event){
-  self.postMessage(Fibo(event.data));
+  for (let i=1; i<=event.data; i+=5){
+    self.postMessage(Fibo(i));
+  };
 },false);
