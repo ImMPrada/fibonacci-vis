@@ -8,7 +8,7 @@ function plotSpiral(fibAlgo) {
     .append("g");
 
 
-  var iterationNumber = 15;
+  var iterationNumber = 10;
 
   var d = "m" + width * .5 + "," + height * .5;
 
