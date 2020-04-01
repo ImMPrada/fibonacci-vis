@@ -8,9 +8,8 @@ function Fibo(n){
   resultado=Fibo(n-1)+Fibo(n-2);
   return resultado
 }
-
 self.addEventListener('message', function(event){
-  for (let i=1; i<=event.data; i+=5){
+  for (let i=1; i<=event.data; i++){
     self.postMessage(Fibo(i));
   };
 },false);

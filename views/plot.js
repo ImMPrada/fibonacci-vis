@@ -1,6 +1,6 @@
 function plotSpiral(fibAlgo) {
-  var width = 600,
-    height = 600;
+  var width = 1000,
+    height = 1000;
 
   var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -8,7 +8,7 @@ function plotSpiral(fibAlgo) {
     .append("g");
 
 
-  var iterationNumber = 10;
+  var iterationNumber = 30;
 
   var d = "m" + width * .5 + "," + height * .5;
 

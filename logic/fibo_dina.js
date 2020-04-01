@@ -16,7 +16,7 @@ function Fibo_dina(n, valores){
 }
 
 self.addEventListener('message', function(event){
-  for (let i=1; i<=event.data; i+=5){
+  for (let i=1; i<=event.data; i++){
     let valores= new Map();
     self.postMessage(Fibo_dina(i,valores));
   };
